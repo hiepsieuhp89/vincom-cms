@@ -1290,7 +1290,7 @@ const AdminPosPage = () => {
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2,  mt: 2 }}>
             <Box sx={{ mt: 2 }}>
               <Grid container spacing={2}>
-                <Grid item component="div" xs={12}>
+                <Grid item xs={12}>
                   <FormControl fullWidth size="small">
                     <InputLabel>Chọn người dùng</InputLabel>
                     <Select
@@ -1308,7 +1308,7 @@ const AdminPosPage = () => {
                   </FormControl>
                 </Grid>
 
-                <Grid item component="div" xs={4}>
+                <Grid item xs={4}>
                   <FormControl fullWidth size="small">
                     <InputLabel>Quốc gia</InputLabel>
                     <Select value={selectedCountry} onChange={handleCountryChange} label="Quốc gia">
@@ -1321,7 +1321,7 @@ const AdminPosPage = () => {
                   </FormControl>
                 </Grid>
 
-                <Grid item component="div" xs={4}>
+                <Grid item xs={4}>
                   <FormControl fullWidth size="small">
                     <InputLabel>Tỉnh/Thành phố</InputLabel>
                     <Select
@@ -1342,7 +1342,7 @@ const AdminPosPage = () => {
                   </FormControl>
                 </Grid>
 
-                <Grid item component="div" xs={4}>
+                <Grid item xs={4}>
                   <FormControl fullWidth size="small">
                     <InputLabel>Thành phố/Quận</InputLabel>
                     <Select
@@ -1363,7 +1363,7 @@ const AdminPosPage = () => {
                   </FormControl>
                 </Grid>
 
-                <Grid item component="div" xs={4}>
+                <Grid item xs={4}>
                   <FormControl fullWidth size="small">
                     <InputLabel>Quận/Huyện</InputLabel>
                     <Select
@@ -1384,7 +1384,7 @@ const AdminPosPage = () => {
                   </FormControl>
                 </Grid>
 
-                <Grid item component="div" xs={4}>
+                <Grid item xs={4}>
                   <FormControl fullWidth size="small">
                     <InputLabel>Mã bưu điện</InputLabel>
                     <Select
@@ -1403,7 +1403,7 @@ const AdminPosPage = () => {
                   </FormControl>
                 </Grid>
 
-                <Grid item component="div" xs={12}>
+                <Grid item xs={12}>
                   <TextField
                     fullWidth
                     size="small"
