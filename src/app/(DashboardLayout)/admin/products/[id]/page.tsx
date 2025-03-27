@@ -14,7 +14,6 @@ import {
   DialogContentText,
   DialogActions,
   TextField,
-  Grid,
 } from "@mui/material"
 import {
   IconArrowLeft,
@@ -217,8 +216,8 @@ function ProductDetailPage() {
 
       <Paper className="p-6 border">
         <form onSubmit={handleSubmit} className="space-y-6">
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
+          <Box className="flex flex-col gap-6">
+            <Box className="w-full">
               <TextField
                 size="small"
                 label="Tên sản phẩm"
@@ -231,70 +230,74 @@ function ProductDetailPage() {
                 className="rounded"
                 disabled={!isEditing}
               />
-            </Grid>
+            </Box>
 
-            <Grid item xs={12} md={6}>
-              <TextField
-                size="small"
-                label="Giá"
-                name="price"
-                type="number"
-                value={formData.price}
-                onChange={handleChange}
-                required
-                fullWidth
-                variant="outlined"
-                className="rounded"
-                disabled={!isEditing}
-              />
-            </Grid>
+            <Box className="flex gap-6">
+              <Box className="w-full md:w-1/2">
+                <TextField
+                  size="small"
+                  label="Giá"
+                  name="price"
+                  type="number"
+                  value={formData.price}
+                  onChange={handleChange}
+                  required
+                  fullWidth
+                  variant="outlined"
+                  className="rounded"
+                  disabled={!isEditing}
+                />
+              </Box>
 
-            <Grid item xs={12} md={6}>
-              <TextField
-                size="small"
-                label="Giá khuyến mãi"
-                name="salePrice"
-                type="number"
-                value={formData.salePrice}
-                onChange={handleChange}
-                fullWidth
-                variant="outlined"
-                className="rounded"
-                disabled={!isEditing}
-              />
-            </Grid>
+              <Box className="w-full md:w-1/2">
+                <TextField
+                  size="small"
+                  label="Giá khuyến mãi"
+                  name="salePrice"
+                  type="number"
+                  value={formData.salePrice}
+                  onChange={handleChange}
+                  fullWidth
+                  variant="outlined"
+                  className="rounded"
+                  disabled={!isEditing}
+                />
+              </Box>
+            </Box>
 
-            <Grid item xs={12} md={6}>
-              <TextField
-                size="small"
-                label="Số lượng"
-                name="stock"
-                type="number"
-                value={formData.stock}
-                onChange={handleChange}
-                required
-                fullWidth
-                variant="outlined"
-                className="rounded"
-                disabled={!isEditing}
-              />
-            </Grid>
+            <Box className="flex gap-6">
+              <Box className="w-full md:w-1/2">
+                <TextField
+                  size="small"
+                  label="Số lượng"
+                  name="stock"
+                  type="number"
+                  value={formData.stock}
+                  onChange={handleChange}
+                  required
+                  fullWidth
+                  variant="outlined"
+                  className="rounded"
+                  disabled={!isEditing}
+                />
+              </Box>
 
-            <Grid item xs={12} md={6}>
-              <TextField
-                size="small"
-                label="ID Danh mục"
-                name="categoryId"
-                value={formData.categoryId}
-                onChange={handleChange}
-                fullWidth
-                variant="outlined"
-                className="rounded"
-                disabled={!isEditing}
-              />
-            </Grid>
+              <Box className="w-full md:w-1/2">
+                <TextField
+                  size="small"
+                  label="ID Danh mục"
+                  name="categoryId"
+                  value={formData.categoryId}
+                  onChange={handleChange}
+                  fullWidth
+                  variant="outlined"
+                  className="rounded"
+                  disabled={!isEditing}
+                />
+              </Box>
+            </Box>
 
-            <Grid item xs={12}>
+            <Box className="w-full">
               <TextField
                 size="small"
                 label="Mô tả chi tiết"
@@ -309,9 +312,9 @@ function ProductDetailPage() {
                 className="rounded"
                 disabled={!isEditing}
               />
-            </Grid>
+            </Box>
 
-            <Grid item xs={12}>
+            <Box className="w-full">
               <Typography fontSize={14} variant="subtitle1" className="mb-2">
                 Hình ảnh sản phẩm
               </Typography>
@@ -341,8 +344,8 @@ function ProductDetailPage() {
                   {isEditing && <input type="file" className="hidden" accept="image/*" onChange={handleImageChange} />}
                 </label>
               )}
-            </Grid>
-          </Grid>
+            </Box>
+          </Box>
 
           {isEditing && (
             <Box className="flex justify-end gap-4">

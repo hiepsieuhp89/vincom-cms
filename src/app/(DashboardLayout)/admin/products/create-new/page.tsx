@@ -128,8 +128,8 @@ export default function CreateProductPage() {
 
       <Paper className="p-6 border">
         <form onSubmit={handleSubmit} className="space-y-6">
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
+          <Box className="flex flex-wrap gap-6">
+            <Box className="w-full">
               <TextField
                 size="small"
                 label="Tên sản phẩm"
@@ -141,9 +141,9 @@ export default function CreateProductPage() {
                 variant="outlined"
                 className="rounded"
               />
-            </Grid>
+            </Box>
             
-            <Grid item xs={12} md={6}>
+            <Box className="w-full md:w-[calc(50%-12px)]">
               <TextField
                 size="small"
                 label="Giá"
@@ -156,9 +156,9 @@ export default function CreateProductPage() {
                 variant="outlined"
                 className="rounded"
               />
-            </Grid>
+            </Box>
             
-            <Grid item xs={12} md={6}>
+            <Box className="w-full md:w-[calc(50%-12px)]">
               <TextField
                 size="small"
                 label="Giá khuyến mãi"
@@ -170,9 +170,9 @@ export default function CreateProductPage() {
                 variant="outlined"
                 className="rounded"
               />
-            </Grid>
+            </Box>
             
-            <Grid item xs={12} md={6}>
+            <Box className="w-full md:w-[calc(50%-12px)]">
               <TextField
                 size="small"
                 label="Số lượng"
@@ -185,9 +185,9 @@ export default function CreateProductPage() {
                 variant="outlined"
                 className="rounded"
               />
-            </Grid>
+            </Box>
             
-            <Grid item xs={12} md={6}>
+            <Box className="w-full md:w-[calc(50%-12px)]">
               <TextField
                 size="small"
                 label="ID Danh mục"
@@ -198,9 +198,9 @@ export default function CreateProductPage() {
                 variant="outlined"
                 className="rounded"
               />
-            </Grid>
+            </Box>
             
-            <Grid item xs={12}>
+            <Box className="w-full">
               <TextField
                 size="small"
                 label="Mô tả chi tiết"
@@ -214,9 +214,9 @@ export default function CreateProductPage() {
                 variant="outlined"
                 className="rounded"
               />
-            </Grid>
+            </Box>
             
-            <Grid item xs={12}>
+            <Box className="w-full">
               <Typography fontSize={14} variant="subtitle1" className="mb-2">
                 Hình ảnh sản phẩm
               </Typography>
@@ -244,8 +244,8 @@ export default function CreateProductPage() {
                   <input type="file" className="hidden" accept="image/*" onChange={handleImageChange} />
                 </label>
               )}
-            </Grid>
-          </Grid>
+            </Box>
+          </Box>
           
           <Box className="flex justify-end gap-4">
             <Button
