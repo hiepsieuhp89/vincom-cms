@@ -2,15 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['*'],
+    domains: ["*"],
   },
   eslint: {
     ignoreDuringBuilds: true,
   },
   async rewrites() {
-    const domain =
-        process.env.NEXT_PUBLIC_API_URL || "194.233.68.19:3002";
-        return [
+    const domain = "194.233.68.19:3002";
+    return [
       {
         source: "/api/:path*",
         destination: `http://${domain}/:path*`,

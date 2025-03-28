@@ -11,7 +11,7 @@ function getLocalAccessToken() {
 
 const instance = axios.create({
   timeout: 3 * 60 * 1000,
-  baseURL: `https://${process.env.NEXT_PUBLIC_API_URL}/`,
+  baseURL: `http://194.233.68.19:3002/`,
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',
