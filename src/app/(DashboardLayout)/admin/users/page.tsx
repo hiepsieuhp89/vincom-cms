@@ -81,6 +81,7 @@ function UsersPage() {
     { key: 'username', label: 'Tên đăng nhập' },
     { key: 'fullName', label: 'Họ tên' },
     { key: 'phone', label: 'Số điện thoại' },
+    { key: 'invitationCode', label: 'Mã mời' },
     { key: 'referralCode', label: 'Mã giới thiệu' },
     { key: 'shopName', label: 'Tên shop' },
     { key: 'shopAddress', label: 'Địa chỉ shop' },
@@ -142,13 +143,33 @@ function UsersPage() {
       </TableCell>
       <TableCell>
         <Box display="flex" alignItems="center" gap={1}>
-          {user.referralCode}
+          {user.invitationCode || "Không có"}
           <IconButton
             size="small"
             onClick={() => {
-              navigator.clipboard.writeText(user.referralCode || "");
-              message.success(`Đã sao chép mã giới thiệu: ${user.referralCode}`);
+              if (user.invitationCode) {
+                navigator.clipboard.writeText(user.invitationCode);
+                message.success(`Đã sao chép mã mời: ${user.invitationCode}`);
+              }
             }}
+            disabled={!user.invitationCode}
+          >
+            <IconCopy size={16} className="text-blue-500"/>
+          </IconButton>
+        </Box>
+      </TableCell>
+      <TableCell>
+        <Box display="flex" alignItems="center" gap={1}>
+          {user.referralCode || "Không có"}
+          <IconButton
+            size="small"
+            onClick={() => {
+              if (user.referralCode) {
+                navigator.clipboard.writeText(user.referralCode);
+                message.success(`Đã sao chép mã giới thiệu: ${user.referralCode}`);
+              }
+            }}
+            disabled={!user.referralCode}
           >
             <IconCopy size={16} className="text-blue-500"/>
           </IconButton>
@@ -169,7 +190,7 @@ function UsersPage() {
                 "success"
           }
           size="small"
-          variant="outlined"
+          variant="filled"
         />
       </TableCell>
       <TableCell>
@@ -177,7 +198,7 @@ function UsersPage() {
           label={user.isActive ? "Đang hoạt động" : "Đã khóa"}
           color={user.isActive ? "success" : "error"}
           size="small"
-          variant="outlined"
+          variant="filled"
         />
       </TableCell>
       <TableCell>{user.balance?.toLocaleString()} VND</TableCell>
